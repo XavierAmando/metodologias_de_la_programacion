@@ -13,7 +13,7 @@ marge = {"color": "yellow",
 "hair": "blue", 
 "dress": "green", 
 "mom": True}
-guns_0 = {"scar": "yellow-orange", , "headshot": 1.5}
+guns_0 = {"scar": "yellow-orange",  "headshot": 1.5}
 print(marge["headshot"])
 
 # add elements to dictionary

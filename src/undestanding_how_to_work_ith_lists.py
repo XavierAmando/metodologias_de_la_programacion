@@ -30,3 +30,7 @@ magicians = ["alice", "david", "caroline"]
 for magician in magicians
    print(magician)
 print(f"i cant wait to see your next trick, {magician.title()}")   
+
+# identacion innceccesaria
+message= "hola python"
+print(message)
