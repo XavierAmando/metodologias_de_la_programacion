@@ -44,6 +44,7 @@ Estructura: Las listas y tuplas almacenan elementos individuales, mientras que l
 # - Usa nombres de claves descriptivos en diccionarios ("name", "age", "price").
 # - Escribe código legible y mensajes claros para el usuario.
 
+# resumen ejecutivo
 
 
 
@@ -77,30 +78,55 @@ Validaciones:
 """
 
 # Solución al problema 1
-initial_items_text = "apple, banana, pera"        
+initial_items_text = "apple, banana, pera"
 new_item = "grape"
 search_item = "banana"
-
 if not initial_items_text.strip():
     print("Error: initial_items_text no puede estar vacío.")
-    items_list = []
 else:
     items_list = [item.strip() for item in initial_items_text.split(",") if item.strip()]
 
-if not new_item.strip():
-    print("Error: new_item no puede estar vacío.")
-
-if not search_item.strip():
-    print("Error: search_item no puede estar vacío.")
-if initial_items_text.strip() and new_item.strip() and search_item.strip():
-
     
-    items_list.append(new_item.strip())
-    len_list = len(items_list)
-    is_in_list = search_item.strip() in items_list
-    print("Items list:", items_list)
-    print("Total items:", len_list)
-    print("Found item:", is_in_list)
+    if not new_item.strip():
+        print("Error: new_item no puede estar vacío.")
+    else:
+        
+        if not search_item.strip():
+            print("Error: search_item no puede estar vacío.")
+        else:
+            
+            items_list.append(new_item.strip())
+            len_list = len(items_list)
+            is_in_list = search_item.strip() in items_list
+
+            print("Items list:", items_list)
+            print("Total items:", len_list)
+            print("Found item:", is_in_list)
+
+
+# casos de preubas
+# el que ya sale bien ya esta puesto
+#caso de prueba 2 con el texto vacio 
+"""
+initial_items_text = "    "
+new_item = "mango"
+search_item = "mango"
+
+y sale
+Error: initial_items_text no puede estar vacío.
+Items list: []      # queda vacío
+# No mostrará más impresiones porque no pasa la validación final
+
+"""
+# caso 3 con el search error
+"""
+initial_items_text = "manzana, uva"
+new_item = "pera"
+search_item = "   "
+
+Error: search_item no puede estar vacío.
+
+"""
 
 
 # problema 2
@@ -127,20 +153,75 @@ Validaciones:
 
 # Solución al problema 2
 
-plano = ((2.0, 3.0), (5.0, 7.0) )  # punto A (2.0, 3.0) y punto B (5.0, 7.0)
-point_a = plano[0]
-point_b = plano[1]
-x1, y1 = point_a
-x2, y2 = point_b
+plano = ((2.0, 3.0), (5.0, 7.0))  # punto A y punto B
 
-distance = ((x2 - x1) ** 2 + (y2 - y1) ** 2)
-mx = (x1 + x2) / 2
-my = (y1 + y2) / 2
-midpoint = (mx, my)
-print("Point A:", point_a)
-print("Point B:", point_b)
-print("Distance:", distance)
-print("Midpoint:", midpoint)
+
+if len(plano) != 2:
+    print("Error: el plano debe tener exactamente dos puntos.")
+else:
+    point_a = plano[0]
+    point_b = plano[1]
+
+
+    if len(point_a) != 2 or len(point_b) != 2:
+        print("Error: cada punto debe tener coordenadas (x, y).")
+    else:
+        x1, y1 = point_a
+        x2, y2 = point_b
+
+        distance = (x2 - x1) ** 2 + (y2 - y1) ** 2
+
+    
+        mx = (x1 + x2) / 2
+        my = (y1 + y2) / 2
+        midpoint = (mx, my)
+
+        print("Point A:", point_a)
+        print("Point B:", point_b)
+        print("Distance:", distance)
+        print("Midpoint:", midpoint)
+
+
+
+## casos de pruebas
+# caso de prueba 1 normañ
+""""
+plano = ((2.0, 3.0), (5.0, 7.0))
+Point A: (2.0, 3.0)
+Point B: (5.0, 7.0)
+Distance: 25
+Midpoint: (3.5, 5.0)
+
+
+
+
+"""
+# caso 2 distancia igal a cero
+""""
+
+plano = ((4.0, 4.0), (4.0, 4.0))
+Point A: (4.0, 4.0)
+Point B: (4.0, 4.0)
+
+
+Distance: 0
+
+
+Midpoint: (4.0, 4.0)
+"""
+# caso 3 puntos con negativos
+"""
+plano = ((-3.0, 2.0), (4.0, -1.0))
+
+
+
+Point A: (-3.0, 2.0)
+Point B: (4.0, -1.0)
+Distance: 58
+Midpoint: (0.5, 0.5)
+
+
+"""
 
 
 # problema 3
@@ -201,6 +282,45 @@ else:
     else:
         print("Error")
 
+# caso de pruebas
+# caso 1 producto normal
+"""
+product_name = "strawberry"
+quantity = 3
+Unit price: 5.0
+
+
+Quantity: 3
+Total: 15.0
+
+
+
+"""
+# caso de prueba 2 producto no existe
+"""
+product_name = "mango"
+quantity = 2
+
+Error
+
+
+
+
+"""
+# caso de prueba 3 quntity invalido
+"""
+product_name = "apple"
+quantity = 0
+
+
+Error: quantity debe ser mayor que 0.
+
+
+
+
+"""
+
+
 # problema 4
 """
 Descripción:
@@ -260,6 +380,9 @@ else:
         print("Error: student not found")
 
 
+# casos de pruebas
+# caso de p
+
 # problema 5
 """
 Descripción:
@@ -306,9 +429,8 @@ else:
         print("Words list:", words_list)
         print("Frequencies:", freq_dict)
         print("Most common word:", most_common_word)
-    
 
- # problema 6
+# problema 6
 """
 
 Descripción:
@@ -349,8 +471,8 @@ Operaciones clave sugeridas:
 - Diccionario: contacts = {"Alice": "1234567890", ...}
 - get(), in, pop()
 - Estructura if/elif para manejar cada acción.
-
 """
+
 # Solución al problema 6
 contacts = {
     "Xavier": "555-1234",
@@ -368,7 +490,7 @@ elif not name.strip():
 else:
     if action == "ADD":
         if not phone.strip():
-            print("Error: phone no puede estar vacío.")
+            print("Error: no puede estar vacío.")
         else:
             contacts[name.strip()] = phone.strip()
             print("Contact saved:", name.strip(), phone.strip())
@@ -383,4 +505,36 @@ else:
             print("Contact deleted:", name.strip())
         else:
             print("Error: contact not found")
-            
+
+
+# casos de prueba
+"""
+tendremos que cambiar el texto para hacer que cambie lo que imprime
+
+"""
+action_text = "SEARCH"
+name = "Cristiano"
+phone = ""
+# es en caso de de usar el search
+" y imprime Phone: 555-8765"
+# ahora en caso de deleted o contacto inexistente
+action_text = "DELETE"
+name = "Neymar"
+phone = ""
+# imprime
+"Error: contact not found"
+
+
+
+# referencias
+"""
+use los apuntes de la clase 
+https://youtu.be/w53HiWSZnzU?si=53OMyzkkSTNmUsQy
+https://pythonaplicado.com/leer/capitulo-6/tuplas-listas-y-diccionarios
+https://youtu.be/PogXFDqR770?si=aKEYox0UqZ3t_R2Q
+https://youtu.be/numQzIgpOo0?si=52c8-Dt22t-s6x5j
+
+
+
+
+"""
