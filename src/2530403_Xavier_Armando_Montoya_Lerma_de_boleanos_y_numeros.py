@@ -1,5 +1,7 @@
-# boleanos
-
+# numeros y boleanos
+# Xavier Armando Montoya Lerma
+# 2530403
+# 1-3 
 
 
 #resumen ejecutivo
@@ -55,6 +57,7 @@ Operaciones clave sugeridas:
 - Comparación: is_high_temperature = (temp_c >= 30.0)
 
 """
+# solucion de problema 1
 try:
     temp_c = float(input("Enter temperature in Celsius: "))
     temp_k = temp_c + 273.15
@@ -68,6 +71,88 @@ try:
         print("High temperature:", is_high_temperature)
 except:
     print("Error: invalid input")
+
+
+# casos de pruebas
+# caso 1
+""""
+Entrada simulada:
+
+25
+
+
+Proceso esperado:
+
+temp_c = 25
+
+temp_k = 298.15 (≥ 0, válido)
+
+temp_f = 77.0
+
+is_high_temperature = False (25 < 30)
+
+Salida esperada:
+
+Fahrenheit: 77.0
+Kelvin: 298.15
+High temperature: False
+"""
+
+# 2. Caso Borde
+"""
+Entrada simulada:
+
+-273.15
+
+
+Proceso esperado:
+
+temp_c = -273.15
+
+temp_k = 0.0 (límite mínimo, válido)
+
+temWS
+is_high_temperature = False
+
+Salida esperada:
+
+Fahrenheit: -459.66999999999996
+Kelvin: 0.0
+High temperature: False
+"""
+
+# 3. Caso Error
+"""
+A) Error físico (Kelvin negativo)
+
+Entrada simulada:
+
+-300
+
+
+Proceso esperado:
+
+temp_k = -26.85 → no válido
+
+El programa debe mostrar error antes de convertir a Fahrenheit.
+
+Salida esperada:
+
+Error: invalid input
+
+# Error de formato (cae en el except)
+
+Entrada simulada:
+
+hola
+
+
+Salida esperada:
+
+Error: invalid input
+
+"""
+
 
 
 # Problem 2: Work hours and overtime payment
@@ -118,6 +203,72 @@ try:
         print("Has overtime:", has_overtime)
 except:
     print("Error: invalid input")
+
+# casos de pruebas 1
+# caso 1
+""" 
+Hours worked: 45
+Hourly rate: 20
+
+Proceso esperado:
+
+regular_hours = 40
+
+overtime_hours = 5
+
+regular_pay = 40 × 20 = 800
+
+overtime_pay = 5 × 20 × 1.5 = 150
+
+total_pay = 950
+
+has_overtime = True
+
+# salida 
+Regular pay: 800.0
+Overtime pay: 150.0
+Total pay: 950.0
+Has overtime: True
+
+
+
+"""
+# caso 2 borde 
+"""
+Hours worked: 40
+Hourly rate: 15
+Proceso esperado:
+
+overtime_hours = 0
+
+regular_pay = 600
+
+overtime_pay = 0
+
+total_pay = 600
+
+has_overtime = False
+# salida
+Regular pay: 600.0
+Overtime pay: 0.0
+Total pay: 600.0
+Has overtime: False
+
+
+
+"""
+# caso 3 error 
+"""
+Hours worked: -5
+Hourly rate: 18
+Salida esperada:
+
+Error: invalid input
+
+
+"""
+
+
 
 
 # Problem 3: Discount eligibility
@@ -173,6 +324,108 @@ try:
 except:
     print("Error: invalid input")
 
+# casos de pruebas
+# cas0 1
+"""
+Entrada simulada:
+
+Purchase total: 500
+Student (YES/NO): YES
+Senior (YES/NO): NO
+
+
+Proceso esperado:
+
+purchase_total = 500
+
+is_student = True
+
+is_senior = False
+
+discount_eligible = True (porque es estudiante)
+
+final_total = 500 * 0.9 = 450
+
+Salida esperada:
+
+Discount eligible: True
+Final total: 450.0
+"""
+ #2. Caso Borde (límite)
+"""
+A) Justo en el límite del descuento por monto
+
+Entrada simulada:
+
+Purchase total: 1000
+Student (YES/NO): NO
+Senior (YES/NO): NO
+
+
+Proceso esperado:
+
+purchase_total = 1000
+
+is_student = False
+
+is_senior = False
+
+discount_eligible = True (porque total ≥ 1000)
+
+final_total = 1000 * 0.9 = 900
+
+Salida esperada:
+
+Discount eligible: True
+Final total: 900.0
+"""
+# 3. Caso Error
+"""
+A) Monto inválido
+
+Entrada simulada:
+
+Purchase total: -50
+Student (YES/NO): NO
+Senior (YES/NO): NO
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Texto inválido en YES/NO (cae en la validación)
+
+Entrada simulada:
+
+Purchase total: 500
+Student (YES/NO): maybe
+Senior (YES/NO): NO
+
+
+Salida esperada:
+
+Error: invalid input
+
+C) Error de formato que activa el except
+
+Entrada simulada:
+
+Purchase total: hola
+Student (YES/NO): YES
+Senior (YES/NO): NO
+
+
+Salida esperada:
+
+Error: invalid input
+
+
+
+
+"""
+
+
 
 # Problem 4: Basic statistics of three integers
 """
@@ -222,6 +475,98 @@ try:
     print("All even:", all_even)
 except:
     print("Error: invalid input")
+
+# caso de pruebas
+# cas0 1
+"""
+1. Caso Normal
+
+Entrada simulada:
+
+Enter integer 1: 4
+Enter integer 2: 7
+Enter integer 3: 10
+
+
+Proceso esperado:
+
+sum = 4 + 7 + 10 = 21
+
+average = 21 / 3 = 7.0
+
+max = 10
+
+min = 4
+
+all_even = False (solo 4 y 10 son pares)
+
+Salida esperada:
+
+Sum: 21
+Average: 7.0
+Max: 10
+Min: 4
+All even: False
+"""
+# 2. Caso Borde (con valores iguales)
+"""
+Entrada simulada:
+
+Enter integer 1: 5
+Enter integer 2: 5
+Enter integer 3: 5
+
+
+Proceso esperado:
+
+sum = 15
+
+average = 5.0
+
+max = 5
+
+min = 5
+
+all_even = False (5 es impar)
+
+Salida esperada:
+
+Sum: 15
+Average: 5.0
+Max: 5
+Min: 5
+All even: False
+"""
+#3. Caso Error
+"""
+A) Formato inválido (cae en el except)
+
+Entrada simulada:
+
+Enter integer 1: hola
+Enter integer 2: 8
+Enter integer 3: 3
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Otro error válido (número decimal cuando esperaba entero)
+
+Entrada simulada:
+
+Enter integer 1: 4.5
+Enter integer 2: 2
+Enter integer 3: 8
+
+
+Salida esperada:
+
+Error: invalid input
+
+
+"""    
 
 # Problem 5: Loan eligibility
 """
@@ -273,6 +618,90 @@ try:
         print("Eligible:", eligible)
 except:
     print("Error: invalid input")
+
+
+# casos de pruebas
+# caso 1
+"""
+Entrada simulada:
+
+Monthly income: 9000
+Monthly debt: 2000
+Credit score: 700
+
+
+Proceso esperado:
+
+debt_ratio = 2000 / 9000 = 0.222...
+
+eligible = True
+
+income ≥ 8000 ✔
+
+debt_ratio ≤ 0.4 ✔
+
+credit_score ≥ 650 ✔
+
+Salida esperada:
+
+Debt ratio: 0.2222222222222222
+Eligible: True
+"""
+# 2. Caso Borde (límite exacto)
+"""
+Entrada simulada:
+
+Monthly income: 8000
+Monthly debt: 3200
+Credit score: 650
+
+
+Proceso esperado:
+
+debt_ratio = 3200 / 8000 = 0.4
+
+eligible = True
+
+income ≥ 8000 ✔
+
+debt_ratio ≤ 0.4 ✔
+
+credit_score ≥ 650 ✔
+
+Salida esperada:
+
+Debt ratio: 0.4
+Eligible: True
+"""
+# 3. Caso Error
+"""
+A) Valores inválidos
+
+Entrada simulada:
+
+Monthly income: 0
+Monthly debt: 500
+Credit score: 700
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Formato inválido (cae en el except)
+
+Entrada simulada:
+
+Monthly income: hola
+Monthly debt: 500
+Credit score: 700
+
+
+Salida esperada:
+
+Error: invalid input
+
+"""
 
 
 #  Problem 6: BMI and category flag
@@ -327,3 +756,109 @@ try:
         print("Overweight:", is_overweight)
 except:
     print("Error: invalid input")
+
+# caso de pruebas
+"""
+1. Caso Normal (BMI dentro del rango saludable)
+
+Entrada simulada:
+
+Weight (kg): 70
+Height (m): 1.75
+
+
+Proceso esperado:
+
+bmi = 70 / (1.75²) = 22.857…
+
+bmi_r = 22.86
+
+is_underweight = False
+
+is_normal = True
+
+is_overweight = False
+
+Salida esperada:
+
+BMI: 22.86
+Underweight: False
+Normal: True
+Overweight: False
+"""
+# 2. Caso Borde (límite exacto entre normal y sobrepeso)
+"""
+Entrada simulada:
+
+Weight (kg): 62
+Height (m): 1.57
+
+
+Cálculo:
+
+bmi = 62 / (1.57²) ≈ 25.15 → ya entra en Overweight
+
+Salida esperada:
+
+BMI: 25.15
+Underweight: False
+Normal: False
+Overweight: True
+
+
+(Este es un caso borde porque está muy cerca del límite de 25.0)
+"""
+# 3. Caso Error
+""" 
+A) Peso inválido
+
+Entrada simulada:
+
+Weight (kg): -50
+Height (m): 1.70
+
+
+Salida esperada:
+
+Error: invalid input
+
+B) Formato inválido (cae en el except)
+
+Entrada simulada:
+
+Weight (kg): hola
+Height (m): 1.70
+
+
+Salida esperada:
+
+Error: invalid input
+
+"""
+
+# conclusiones
+""" 
+Los enteros y flotantes suelen trabajar juntos en programas porque 
+muchos cálculos reales mezclan cantidades exactas con valores decimales,
+ como horas trabajadas o precios. 
+ Las comparaciones producen valores booleanos que permiten decidir qué camino seguir mediante sentencias if. Validar rangos y evitar divisiones entre cero es clave para prevenir errores lógicos y fallos en la ejecución. Además, diseñar condiciones combinadas con and, or y not ayuda a expresar reglas más precisas y realistas. Todos estos patrones
+
+ se repiten constantemente en problemas de nómina, cálculos de descuentos, intereses de préstamos y en general en
+   cualquier sistema que tome decisiones basadas en datos numéricos.
+
+Es importante usar validaciones y casos de prueba porque así evitamos que el programa falle cuando alguien mete datos raros o incorrectos. También nos ayuda a ver si todo funciona bien en situaciones normales y en límites. En pocas palabras, sirve para asegurarnos de que el código no haga cosas locas, dé resultados confiables y sea más fácil de usar sin errores.   
+"""   
+# referencias
+"""
+1) https://youtu.be/0wtQJX_YlGU?si=xi7OzluCpHfMp7zX
+2)apuntes de clases aunque 
+3)https://es.python-3.com/?p=269#google_vignette
+4)https://ellibrodepython.com/booleano-python
+5)https://youtu.be/VJadt5X0uzE?si=hG-vJ_nermfWRjK5
+"""
+
+
+# repo
+"""
+https://github.com/XavierAmando/metodologias_de_la_programacion.git
+"""
