@@ -45,7 +45,13 @@ Estructura: Las listas y tuplas almacenan elementos individuales, mientras que l
 # - Escribe código legible y mensajes claros para el usuario.
 
 # resumen ejecutivo
+"""
+La validación de datos y el uso de casos de prueba son esenciales para asegurar que un programa funcione de manera confiable. Permiten detectar errores antes de que afecten al usuario, garantizan resultados correctos en distintos escenarios y
+ mejoran la estabilidad del sistema.
+   En conjunto,
+ estas prácticas aumentan la calidad del software y facilitan su uso, evitando fallas inesperadas.
 
+"""
 
 
 
