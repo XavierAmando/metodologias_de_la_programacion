@@ -1,28 +1,25 @@
-user_input= input("Set your numbers term: ")
+# --------------------------------------------------
+# 7.1 Problem 1: Sum of range with for
+# --------------------------------------------------
 
-if not user_input.isdigit():
-    print("Is not a valid character")
-    exit()
+try:
+    n = int(input("Enter n: "))
 
-n = int(user_input)
+    if n < 1:
+        print("Error: invalid input")
+    else:
+        total_sum = 0
+        even_sum = 0
 
-if n<1 or n>50:
-    print("Number is not in the range")
-    exit()
-elif n==1:
-    print("Fibonacci: 0")
-    exit()
-elif n==2:
-    print("Fibonacci: 0, 1")
-    exit()
+        # Recorremos de 1 a n usando for
+        for number in range(1, n + 1):
+            total_sum += number
 
-fibo=[0,1]
+            if number % 2 == 0:
+                even_sum += number
 
-for i in range(2, n):
-    next_term=fibo[i-1]+fibo[i-2]
-    fibo.append(next_term)
+        print("Sum 1..n:", total_sum)
+        print("Even sum 1..n:", even_sum)
 
-fibo_text=", ".join(str(x) for x in fibo)
-
-print(f"Fibonacci: {fibo_text}")
-
+except:
+    print("Error: invalid input")
