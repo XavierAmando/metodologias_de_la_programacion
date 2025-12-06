@@ -544,3 +544,8 @@ apuntes de clases
 https://elpythonista.com/funciones-en-python-guia-completa-2025-sintaxis-parametros-y-ejemplos
 https://imaginaformacion.com/tutoriales/funciones-en-python
 """
+
+#Repositorio
+"""
+https://github.com/XavierAmando/metodologias_de_la_programacion.git
+"""
